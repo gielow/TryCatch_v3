@@ -34,3 +34,15 @@ E:\VSWorkspace\TryCatch_v3\TryCatch.Interfaces\bin\Debug\EntityFramework.SqlServ
 E:\VSWorkspace\TryCatch_v3\TryCatch.Interfaces\obj\Debug\TryCatch.Interfaces.csprojResolveAssemblyReference.cache
 E:\VSWorkspace\TryCatch_v3\TryCatch.Interfaces\obj\Debug\TryCatch.Interfaces.dll
 E:\VSWorkspace\TryCatch_v3\TryCatch.Interfaces\obj\Debug\TryCatch.Interfaces.pdb
+D:\VSWorkspace\TryCatch_v3\TryCatch.Interfaces\bin\Debug\TryCatch.Interfaces.dll.config
+D:\VSWorkspace\TryCatch_v3\TryCatch.Interfaces\bin\Debug\TryCatch.Interfaces.dll
+D:\VSWorkspace\TryCatch_v3\TryCatch.Interfaces\bin\Debug\TryCatch.Interfaces.pdb
+D:\VSWorkspace\TryCatch_v3\TryCatch.Interfaces\bin\Debug\EntityFramework.dll
+D:\VSWorkspace\TryCatch_v3\TryCatch.Interfaces\bin\Debug\EntityFramework.SqlServer.dll
+D:\VSWorkspace\TryCatch_v3\TryCatch.Interfaces\bin\Debug\TryCatch.Models.dll
+D:\VSWorkspace\TryCatch_v3\TryCatch.Interfaces\bin\Debug\TryCatch.Models.pdb
+D:\VSWorkspace\TryCatch_v3\TryCatch.Interfaces\bin\Debug\EntityFramework.xml
+D:\VSWorkspace\TryCatch_v3\TryCatch.Interfaces\bin\Debug\EntityFramework.SqlServer.xml
+D:\VSWorkspace\TryCatch_v3\TryCatch.Interfaces\obj\Debug\TryCatch.Interfaces.csprojResolveAssemblyReference.cache
+D:\VSWorkspace\TryCatch_v3\TryCatch.Interfaces\obj\Debug\TryCatch.Interfaces.dll
+D:\VSWorkspace\TryCatch_v3\TryCatch.Interfaces\obj\Debug\TryCatch.Interfaces.pdb

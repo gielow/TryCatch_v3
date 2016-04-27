@@ -132,12 +132,12 @@ namespace TryCatch.Controllers
 
         private async Task<bool> ValidateLogin(CustomerLoginModel model)
         {
-            var res = await WebApiClient3.Instance.PostAsync<CustomerLoginModel, bool>("api/Customer/ValidateLogin", model);
+            var res = await WebApiClient3.Instance.AuthenticateAsync(model.Email, model.Password);
 
             if (res)
             {
                 FormsAuthentication.SetAuthCookie(model.Email, false);
-                await WebApiClient3.Instance.AuthenticateAsync(model.Email, model.Password);
+                //HttpContext.Cache["AuthToken"] = WebApiClient3.Instance.AuthToken;
             }
 
             return res;

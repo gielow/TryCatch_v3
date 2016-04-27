@@ -24,7 +24,7 @@ namespace TryCatch.IoC
             {
                 return container.Resolve(serviceType);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //logger.ErrorFormat("Erro ao resolver {0}. {1}", serviceType, ex);
                 return null;
@@ -37,7 +37,7 @@ namespace TryCatch.IoC
             {
                 return container.ResolveAll(serviceType);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //logger.ErrorFormat("Erro ao resolver {0}. {1}", serviceType, ex);
                 return Enumerable.Empty<object>();

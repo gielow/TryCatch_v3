@@ -31,11 +31,11 @@ namespace TryCatch.Api.Providers
 
             _publicClientId = publicClientId;
         }
-
-        public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
+        
+        public override Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             var loginModel = new CustomerLoginModel() { Email = context.UserName, Password = context.Password };
-            var user =_customerComponent.ValidateLogin(loginModel);
+            var user = _customerComponent.ValidateLogin(loginModel);
             //var user = _repository.Customers.FirstOrDefault(c => c.Email == context.UserName && c.Password == context.Password);
 
             var claims = new List<Claim>();
@@ -49,6 +49,8 @@ namespace TryCatch.Api.Providers
             AuthenticationTicket ticket = new AuthenticationTicket(oAuthIdentity, properties);
             context.Validated(ticket);
             context.Request.Context.Authentication.SignIn(cookiesIdentity);
+
+            return Task.FromResult<object>(null);
         }
         
         public override Task TokenEndpoint(OAuthTokenEndpointContext context)

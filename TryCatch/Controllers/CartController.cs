@@ -46,10 +46,10 @@ namespace TryCatch.Controllers
             return await Index();
         }
         
-        public ActionResult Items(string guid)
+        public async Task<ActionResult> Items(string guid)
         {
-            var cart = WebApiClient3.Instance.GetAsync<Cart>(string.Format("api/Cart/{0}", guid));
-            return View(cart.Result.Items);
+            var cart = await WebApiClient3.Instance.GetAsync<Cart>(string.Format("api/Cart/{0}", guid));
+            return View(cart.Items);
         }
 
         [HttpPost]
@@ -79,6 +79,7 @@ namespace TryCatch.Controllers
         [Authorize]
         public async Task<ActionResult> Checkout()
         {
+            //await WebApiClient3.Instance.AuthenticateAsync(User.Identity.na)
             var cart = await GetCart();
 
             var url = string.Format("api/Cart/{0}/Checkout", cart.Guid);

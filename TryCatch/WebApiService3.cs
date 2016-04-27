@@ -32,7 +32,7 @@ namespace TryCatch
 
         }
 
-        public async Task AuthenticateAsync(string userName, string password)
+        public async Task<bool> AuthenticateAsync(string userName, string password)
         {
             var encodedForm = new FormUrlEncodedContent(new List<KeyValuePair<string, string>>
             {
@@ -52,7 +52,12 @@ namespace TryCatch
                     var values = JsonConvert.DeserializeObject<Dictionary<string, string>>(result);
 
                     if (values.ContainsKey("access_token"))
+                    {
                         this.AuthToken = values["access_token"];
+                        return true;
+                    }
+
+                    return false;
                 }
             }
             catch (Exception ex)
@@ -67,7 +72,7 @@ namespace TryCatch
             client.BaseAddress = new Uri(this.BaseAddress);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
+            // If authenticated add the bearer token in the header
             if (!string.IsNullOrEmpty(AuthToken))
                 client.DefaultRequestHeaders.Authorization = AuthenticationHeaderValue.Parse("Bearer " + AuthToken);
 
