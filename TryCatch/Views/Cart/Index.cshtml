@@ -1,4 +1,4 @@
-﻿@model TC.Models.Cart
+﻿@model TryCatch.Models.Cart
 
 @{
     ViewBag.Title = "Index";
@@ -17,12 +17,12 @@
 
 @foreach (var item in Model.Items) {
     <tr>
-        <td>@item.Article.Description</td>
-        <td>$ @item.Article.Price.ToString("C")</td>
+        <td>@item.ArticleName</td>
+        <td>@item.ArticlePrice.ToString("C")</td>
         <td>@item.Quantity</td>
-        <td>$ @item.Total.ToString("C")</td>
+        <td>@item.Total.ToString("C")</td>
         <td>
-            <a href="#" onclick="javascript:removeItem(@item.Article.Id, 1, null);">Remove</a>
+            <a href="#" onclick="javascript:removeItem(@item.ArticleId, 1, null);">Remove</a>
         </td>
     </tr>
 }

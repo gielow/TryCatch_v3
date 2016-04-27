@@ -13,7 +13,7 @@ namespace TryCatch.Controllers
         // GET: Order
         public async Task<ActionResult> Index()
         {
-            var result = await WebApiService.Instance.GetAsync<IEnumerable<Order>>("api/Order");
+            var result = await WebApiClient3.Instance.GetAsync<IEnumerable<Order>>("api/Order");
             return View(result);
         }
 

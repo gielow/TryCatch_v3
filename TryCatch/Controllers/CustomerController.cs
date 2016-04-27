@@ -37,33 +37,16 @@ namespace TryCatch.Controllers
         {
             try
             {
-                //WebApiService.Instance.PostAsync<Customer>("Create", model);
+                await WebApiClient3.Instance.PostAsync<Customer>("api/Customer", model);
 
-                using (var client = new HttpClient())
+                var loginModel = new CustomerLoginModel()
                 {
-                    client.BaseAddress = new Uri("http://localhost/TryCatchApi_v2/");
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                    var response = await client.PostAsJsonAsync("api/Customer", model);
+                    Email = model.Email,
+                    Password = model.Password
+                };
 
-                    if (response.IsSuccessStatusCode)
-                    {
-                        // Get the URI of the created resource.
-                        Uri gizmoUrl = response.Headers.Location;
-                        var loginModel = new CustomerLoginModel() {
-                            Email = model.Email,
-                            Password = model.Password
-                        };
-
-                        this.Login(loginModel, returnUrl);
-                    }
-                    else
-                    {
-                        throw new Exception("Error at save customer");
-                    }
-                    //client.PostAsync<Customer>("http://localhost/TryCatchApi_v2/api/Customer/", model)
-                }
-
+                await this.Login(loginModel, returnUrl);
+                
                 return RedirectToLocal(returnUrl);
             }
             catch
@@ -127,13 +110,14 @@ namespace TryCatch.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(CustomerLoginModel model, string returnUrl)
+        public async Task<ActionResult> Login(CustomerLoginModel model, string returnUrl)
         {
             if (ModelState.IsValid)
             {
-                if (ValidateLogin(model.Email, model.Password).Result)
+                var loginOk = await ValidateLogin(model);
+
+                if (loginOk)
                 {
-                    FormsAuthentication.SetAuthCookie(model.Email, false);
                     return RedirectToLocal(returnUrl);
                 }
                 else
@@ -146,13 +130,15 @@ namespace TryCatch.Controllers
             return View(model);
         }
 
-        private async Task<bool> ValidateLogin(string email, string password)
+        private async Task<bool> ValidateLogin(CustomerLoginModel model)
         {
-            var model = new CustomerLoginModel() { Email = email, Password = password };
-            var res = WebApiService.Instance.PostAsync<CustomerLoginModel, bool>("api/Customer/ValidateLogin", model).Result;
+            var res = await WebApiClient3.Instance.PostAsync<CustomerLoginModel, bool>("api/Customer/ValidateLogin", model);
 
             if (res)
-                FormsAuthentication.SetAuthCookie(email, false);
+            {
+                FormsAuthentication.SetAuthCookie(model.Email, false);
+                await WebApiClient3.Instance.AuthenticateAsync(model.Email, model.Password);
+            }
 
             return res;
         }

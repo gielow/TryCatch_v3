@@ -13,14 +13,16 @@ namespace TryCatch.Controllers
         // GET: Article
         public async Task<ActionResult> Index()
         {
-            var result = await WebApiService.Instance.GetAsync<IEnumerable<Article>>("api/Article/Page/1");
+            // Fixed without page because the articles are loaded by ajax directly in the api.
+            var result = await WebApiClient3.Instance.GetAsync<IEnumerable<Article>>("api/Article/Page/");
             return View(result);
         }
 
         // GET: Article/Details/5
-        public ActionResult Details(int id)
+        public async Task<ActionResult> Details(int id)
         {
-            return View();
+            var result = await WebApiClient3.Instance.GetAsync<Article>(string.Format("api/Article/Page/{0}", id));
+            return View(result);
         }
     }
 }

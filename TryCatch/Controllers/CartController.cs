@@ -1,46 +1,91 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
+using System.Threading.Tasks;
+using System.Web;
+using System.Web.Mvc;
+using TryCatch.Interfaces;
 using TryCatch.Models;
 
 namespace TryCatch.Controllers
 {
-    public class CartController : ApiController
+    public class CartController : Controller
     {
-        // GET: api/Cart
-        public IEnumerable<string> Get()
+        public async Task<ActionResult> New()
         {
-            return new string[] { "value1", "value2" };
+            var cart = await WebApiClient3.Instance.PostAsync<object, Cart>("api/Cart/New", null);
+
+            return View(cart);
         }
 
-        // GET: api/Cart/5
-        public string Get(int id)
+        // GET: Cart
+        public async Task<ActionResult> Index()
         {
-            return "value";
+            return View(await GetCart());
         }
 
-        // POST: api/Cart
-        public void Post([FromBody]string value)
+        private async Task<Cart> GetCart()
         {
+            var guid = HttpContext.Session["CartGuid"] as string;
+            Cart cart = null;
+            // If there is a guid, try to load the cart
+            if (!string.IsNullOrEmpty(guid))
+                cart = await WebApiClient3.Instance.GetAsync<Cart>(string.Format("api/Cart/{0}", guid));
+            // In case of the cart doesn't exists anymore
+            if (cart == null)
+                cart = await WebApiClient3.Instance.PostAsync<object, Cart>("api/Cart/New", null);
+
+            HttpContext.Session["CartGuid"] = cart.Guid;
+
+            return cart;
         }
 
-        // PUT: api/Cart/5
-        public void Put(int id, [FromBody]string value)
+        // GET: Cart/Details/5
+        public async Task<ActionResult> Details(string guid)
         {
+            return await Index();
+        }
+        
+        public ActionResult Items(string guid)
+        {
+            var cart = WebApiClient3.Instance.GetAsync<Cart>(string.Format("api/Cart/{0}", guid));
+            return View(cart.Result.Items);
         }
 
-        // DELETE: api/Cart/5
-        public void Delete(int id)
+        [HttpPost]
+        public async Task AddItem(int articleId, int quantity)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session["CartGuid"] as string))
+                await GetCart();
+
+            var url = string.Format("api/Cart/{0}/Items/{1}/{2}",
+                HttpContext.Session["CartGuid"] as string, articleId, quantity);
+            
+            await WebApiClient3.Instance.PostAsync<object, Cart>(url, null);
         }
 
-        [HttpGet]
-        public IEnumerable<OrderItem> Items(string guid)
+        [HttpDelete]
+        public async Task RemoveItem(int articleId, int quantity)
         {
-            return null;
+            if (string.IsNullOrEmpty(HttpContext.Session["CartGuid"] as string))
+                await GetCart();
+
+            var url = string.Format("api/Cart/{0}/Items/{1}/{2}",
+                HttpContext.Session["CartGuid"] as string, articleId, quantity);
+
+            await WebApiClient3.Instance.DeleteAsync(url);
+        }
+
+        [Authorize]
+        public async Task<ActionResult> Checkout()
+        {
+            var cart = await GetCart();
+
+            var url = string.Format("api/Cart/{0}/Checkout", cart.Guid);
+            var order = await WebApiClient3.Instance.PostAsync<object, Order>(url, null);
+
+            RedirectToAction("Details", "Order", new { id = order.Id });
+            return View(order);
         }
     }
 }
