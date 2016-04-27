@@ -30,8 +30,8 @@ namespace TryCatch.IoC
         public static TinyIoCContainer Container()
         {
             var container = TinyIoCContainer.Current;
-            container.Register<IRepository, Repository>();
-            container.Register<IRepository2, Repository2>();
+            //container.Register<IRepository, Repository>();
+            //container.Register<IRepository2, Repository2>();
             container.Register<IDbRepository, DatabaseDataProvider>();
             container.Register<IXmlRepository, XmlRepository>();
 

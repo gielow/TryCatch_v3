@@ -11,13 +11,22 @@ namespace TryCatch.Models
     {
         [Key]
         public long Id { get; set; }
-        public Article Article { get; set; }
+        [Required]
+        public string CartGuid { get; set; }
+        [Required]
         public int Quantity { get; set; }
+        // Redundance of information because the Articles are stored in a diferent database
+        [Required]
+        public long ArticleId { get; set; }
+        [Required]
+        public string ArticleName { get; set; }
+        [Required]
+        public decimal ArticlePrice { get; set; }
         public decimal Total
         {
             get
             {
-                return this.Quantity * Article.Price;
+                return this.Quantity * ArticlePrice;
             }
         }
     }

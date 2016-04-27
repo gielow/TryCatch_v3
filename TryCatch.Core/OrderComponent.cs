@@ -10,14 +10,21 @@ namespace TryCatch.Core
 {
     public class OrderComponent : IOrderComponent
     {
+        IDbRepository _repository;
+
+        public OrderComponent(IDbRepository repository)
+        {
+            _repository = repository;
+        }
+
         public Order Get(int id)
         {
-            throw new NotImplementedException();
+            return _repository.Orders.Find(id);
         }
 
         public List<Order> GetMany()
         {
-            throw new NotImplementedException();
+            return _repository.Orders.ToList();
         }
     }
 }

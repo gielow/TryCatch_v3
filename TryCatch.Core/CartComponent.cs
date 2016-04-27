@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
 using TryCatch.Interfaces;
@@ -45,15 +46,33 @@ namespace TryCatch.Core
 
         public Cart Get(string guid)
         {
-            return _repository.Carts.FirstOrDefault(c => c.Guid.Equals(guid));
+            return _repository.Carts.Include(ca => ca.Items).FirstOrDefault(c => c.Guid.Equals(guid));
         }
 
         public void AddItem(string guid, int articleId, int quantity)
         {
-            var cart = this.Get(guid);
+            var cart = _repository.Carts.Include(c => c.Items).FirstOrDefault(c => c.Guid == guid);
             var article = _xmlRepository.Articles.FirstOrDefault(a => a.Id == articleId);
-            
-            cart.AddArticle(article, quantity);
+            var cartItem = cart.Items.FirstOrDefault(i => i.ArticleId == articleId);
+
+            if (cartItem != null)
+            {
+                cartItem.Quantity += quantity;
+            }
+            else
+            {
+                var orderItem = new OrderItem();
+                orderItem.ArticleId = article.Id;
+                orderItem.ArticleName = article.Description;
+                orderItem.ArticlePrice = article.Price;
+                orderItem.CartGuid = guid;
+                orderItem.Quantity = quantity;
+
+                cart.Items.Add(orderItem);
+            }
+
+            _repository.Carts.Attach(cart);
+            _repository.SaveChanges();
         }
 
         public void Assign(Cart cart, Customer customer)
@@ -71,9 +90,20 @@ namespace TryCatch.Core
 
         public void RemoveItem(string guid, int articleId, int quantity)
         {
-            var cart = this.Get(guid);
+            var cart = _repository.Carts.FirstOrDefault(c => c.Guid == guid);
+            var article = _xmlRepository.Articles.FirstOrDefault(a => a.Id == articleId);
+            var cartItem = cart.Items.FirstOrDefault(i => i.ArticleId == articleId);
+
+            if (cartItem != null)
+            {
+                cartItem.Quantity -= quantity;
+
+                if (cartItem.Quantity < 0)
+                    cart.Items.Remove(cartItem);
+            }
             
-            cart.RemoveArticle(articleId, quantity);
+            _repository.Carts.Attach(cart);
+            _repository.SaveChanges();
         }
     }
 }

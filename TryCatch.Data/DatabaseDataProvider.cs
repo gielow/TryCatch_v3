@@ -25,6 +25,8 @@ namespace TryCatch.Data
 
         public DbSet<Order> Orders { get; set; }
 
+        public DbSet<OrderItem> OrderItems { get; }
+
         public DbSet<Cart> Carts { get; set; }
 
         public override int SaveChanges()

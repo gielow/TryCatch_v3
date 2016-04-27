@@ -59,8 +59,6 @@
     <Compile Include="IArticleComponent.cs" />
     <Compile Include="ICartComponent.cs" />
     <Compile Include="IDbRepository.cs" />
-    <Compile Include="IRepository2.cs" />
-    <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -11,7 +11,7 @@ namespace TryCatch.Tests.Api
     public class WebApiClient
     {
         public string AuthToken { get; set; }
-        public string BaseAddress { get { return "http://localhost/TryCatchApi_v2/"; } }
+        public string BaseAddress { get { return "http://localhost/TryCatchApi_v3/"; } }
 
         private static WebApiClient _instance;
             

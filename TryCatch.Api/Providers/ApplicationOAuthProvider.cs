@@ -11,17 +11,18 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using TryCatch.Api.Models;
 using TryCatch.Interfaces;
+using TryCatch.Models;
 
 namespace TryCatch.Api.Providers
 {
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {
         private readonly string _publicClientId;
-        private IRepository _repository;
+        private ICustomerComponent _customerComponent;
 
-        public ApplicationOAuthProvider(IRepository repository, string publicClientId)
+        public ApplicationOAuthProvider(ICustomerComponent customerComponent, string publicClientId)
         {
-            _repository = repository;
+            _customerComponent = customerComponent;
 
             if (publicClientId == null)
             {
@@ -33,7 +34,9 @@ namespace TryCatch.Api.Providers
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
-            var user = _repository.Customers.FirstOrDefault(c => c.Email == context.UserName && c.Password == context.Password);
+            var loginModel = new CustomerLoginModel() { Email = context.UserName, Password = context.Password };
+            var user =_customerComponent.ValidateLogin(loginModel);
+            //var user = _repository.Customers.FirstOrDefault(c => c.Email == context.UserName && c.Password == context.Password);
 
             var claims = new List<Claim>();
             claims.Add(new Claim(ClaimTypes.Name, user.FirstName));

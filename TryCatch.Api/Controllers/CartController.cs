@@ -19,15 +19,17 @@ namespace TryCatch.Api.Controllers
             _component = component;
         }
 
-        [HttpGet]
+        [HttpPost]
         [ResponseType(typeof(Cart))]
+        [Route("api/Cart/New")]
         public IHttpActionResult New()
         {
             return Ok(_component.New());
         }
 
-        [HttpGet]
+        //[HttpGet]
         [ResponseType(typeof(Cart))]
+        [Route("api/Cart/{guid}")]
         public IHttpActionResult Get(string guid)
         {
             var cart = _component.Get(guid);
@@ -69,6 +71,8 @@ namespace TryCatch.Api.Controllers
         }
 
         [Authorize]
+        [HttpPost]
+        [Route("api/Cart/{guid}/Checkout")]
         public IHttpActionResult Checkout(string guid)
         {
             var order = _component.Checkout(guid, User.Identity.Name);

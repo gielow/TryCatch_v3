@@ -17,6 +17,8 @@ namespace TryCatch.Tests.Api
             //var cart = WebApiClient.Instance.GetAsync<Cart>("api/Cart/New");
 
             var cart = WebApiClient.Instance.GetAsync("api/Cart/New", "");
+
+            Assert.IsFalse(string.IsNullOrEmpty(cart.Result));
         }
     }
 }

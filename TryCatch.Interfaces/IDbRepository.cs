@@ -17,6 +17,8 @@ namespace TryCatch.Interfaces
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 
         DbSet<Order> Orders { get;  }
+
+        DbSet<OrderItem> OrderItems { get; }
         DbSet<Customer> Customers { get;  }
 
         DbSet<Cart> Carts { get; }

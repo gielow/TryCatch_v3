@@ -16,25 +16,24 @@ namespace TryCatch.Api.Controllers
 {
     public class CustomerController : ApiController
     {
-        private IDbRepository db;
-        IRepository2 _repository;
-        public CustomerController(IRepository2 repository, IDbRepository context)
+        private ICustomerComponent _component;
+
+        public CustomerController(ICustomerComponent component)
         {
-            _repository = repository;
-            db = context;
+            _component = component;
         }
 
         // GET: api/Customer
         public IQueryable<Customer> GetCustomer()
         {
-            return db.Customers;
+            return _component.GetMany().AsQueryable();
         }
 
         // GET: api/Customer/5
         [ResponseType(typeof(Customer))]
         public IHttpActionResult GetCustomer(int id)
         {
-            Customer customer = db.Customers.Find(id);
+            Customer customer = _component.Get(id);
             if (customer == null)
             {
                 return NotFound();
@@ -47,13 +46,14 @@ namespace TryCatch.Api.Controllers
         [Route("api/Customer/ValidateLogin")]
         public bool ValidateLogin(CustomerLoginModel model)
         {
-            return db.Customers.Count(c => c.Email == model.Email && c.Password == model.Password) > 0;
+            return _component.ValidateLogin(model) != null;
         }
 
         // PUT: api/Customer/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutCustomer(int id, Customer customer)
         {
+            
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -64,17 +64,8 @@ namespace TryCatch.Api.Controllers
                 return BadRequest();
             }
 
-            //db.Entry(customer).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                throw;
-            }
-
+            _component.Put(customer);
+            
             return StatusCode(HttpStatusCode.NoContent);
         }
 
@@ -87,35 +78,7 @@ namespace TryCatch.Api.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.Customers.Add(customer);
-            db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new { id = customer.Id }, customer);
-        }
-
-        // DELETE: api/Customer/5
-        [ResponseType(typeof(Customer))]
-        public IHttpActionResult DeleteCustomer(int id)
-        {
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
-            {
-                return NotFound();
-            }
-
-            db.Customers.Remove(customer);
-            db.SaveChanges();
-
-            return Ok(customer);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                //db.Dispose();
-            }
-            base.Dispose(disposing);
+            return Ok(_component.Put(customer));
         }
     }
 }

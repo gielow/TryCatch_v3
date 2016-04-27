@@ -9,33 +9,19 @@ namespace TryCatch.Models
 {
     public class Cart
     {
+        public Cart()
+        {
+            Items = new List<OrderItem>();
+        }
+
         public Cart(string guid)
         {
             Guid = guid;
             Items = new List<OrderItem>();
         }
 
-        public void AddArticle(Article article, int quantity)
-        {
-            var cartItem = Items.FirstOrDefault(i => i.Article == article) ?? null;
-
-            if (cartItem != null)
-            {
-                cartItem.Quantity += quantity;
-            }
-            else
-            {
-                cartItem = new OrderItem()
-                {
-                    Quantity = quantity,
-                    Article = article
-                };
-
-                Items.Add(cartItem);
-            }
-        }
-
         [Key]
+        [Required]
         public string Guid { get; set; }
         public List<OrderItem> Items { get; set; }
         public decimal Total
@@ -58,19 +44,6 @@ namespace TryCatch.Models
         public override int GetHashCode()
         {
             return base.GetHashCode();
-        }
-
-        public void RemoveArticle(int itemId, int quantity)
-        {
-            var item = Items.FirstOrDefault(i => i.Article.Id == itemId);
-
-            if (item != null)
-            {
-                item.Quantity -= quantity;
-
-                if (item.Quantity <= 0)
-                    Items.Remove(item);
-            }
         }
     }
 }

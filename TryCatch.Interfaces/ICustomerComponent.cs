@@ -10,7 +10,8 @@ namespace TryCatch.Interfaces
     public interface ICustomerComponent
     {
         Customer Get(int id);
-        void Put(Customer customer);
-        bool ValidateLogin(CustomerLoginModel loginModel);
+        List<Customer> GetMany();
+        Customer Put(Customer customer);
+        Customer ValidateLogin(CustomerLoginModel loginModel);
     }
 }
