@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCart xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Cart>
+    <Guid>619303cc-5e14-48ca-963a-9a8119fc4125</Guid>
+    <Items />
+  </Cart>
+</ArrayOfCart>

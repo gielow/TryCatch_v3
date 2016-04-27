@@ -1,0 +1,40 @@
+﻿@model TC.Models.Cart
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Cart</h2>
+
+<table class="table">
+    <tr>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Items) {
+    <tr>
+        <td>@item.Article.Description</td>
+        <td>$ @item.Article.Price.ToString("C")</td>
+        <td>@item.Quantity</td>
+        <td>$ @item.Total.ToString("C")</td>
+        <td>
+            <a href="#" onclick="javascript:removeItem(@item.Article.Id, 1, null);">Remove</a>
+        </td>
+    </tr>
+}
+    <tr><td colspan="5"></td></tr>
+    <tr>
+        <th colspan="3">Sub total</th>
+        <th>@Model.Items.Sum(m => m.Total).ToString("C")</th>
+    </tr>
+</table>
+
+@Html.ActionLink("Checkout", "Checkout", new { guid = Model.Guid },
+    new { onclick = "return confirm('Confirm cart checkout?');" })
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/Content/Script/cart.js")
