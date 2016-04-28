@@ -9,8 +9,8 @@
     <h4>Order</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>@Html.DisplayNameFor(model => model.Protocol)</dt>
-        <dd>@Html.DisplayFor(model => model.Protocol)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Id)</dt>
+        <dd>@Html.DisplayFor(model => model.Id)</dd>
 
         <dt>@Html.DisplayNameFor(model => model.DateTime)</dt>
         <dd>@Html.DisplayFor(model => model.DateTime)</dd>
@@ -34,8 +34,8 @@
     @foreach (var item in Model.Items)
     {
         <tr>
-            <td>@item.Article.Description</td>
-            <td>$ @item.Article.Price.ToString("C")</td>
+            <td>@item.ArticleName</td>
+            <td>$ @item.ArticlePrice.ToString("C")</td>
             <td>@item.Quantity</td>
             <td>$ @item.Total.ToString("C")</td>
         </tr>

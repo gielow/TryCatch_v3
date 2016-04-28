@@ -8,6 +8,7 @@ using TryCatch.Models;
 
 namespace TryCatch.Controllers
 {
+    [Authorize]
     public class OrderController : Controller
     {
         // GET: Order
@@ -18,9 +19,10 @@ namespace TryCatch.Controllers
         }
 
         // GET: Order/Details/5
-        public ActionResult Details(int id)
+        public async Task<ActionResult> Details(int id)
         {
-            return View();
+            var result = await WebApiClient3.Instance.GetAsync<Order>(string.Format("api/Order/{0}", id));
+            return View(result);
         }
 
         // GET: Order/Create

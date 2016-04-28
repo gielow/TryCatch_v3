@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace TryCatch
 {
@@ -46,7 +47,7 @@ namespace TryCatch
                 using (var client = GetClient())
                 {
                     var response = await client.PostAsync("token", encodedForm);
-                    response.EnsureSuccessStatusCode();
+                    //response.EnsureSuccessStatusCode();
                     var result = await response.Content.ReadAsStringAsync();
 
                     var values = JsonConvert.DeserializeObject<Dictionary<string, string>>(result);
@@ -57,7 +58,10 @@ namespace TryCatch
                         return true;
                     }
 
-                    return false;
+                    if (values.ContainsKey("error") && values["error"].Equals("invalid_grant"))
+                        return false;
+                    // Throw the entire response
+                    throw new Exception(result);
                 }
             }
             catch (Exception ex)
@@ -75,7 +79,9 @@ namespace TryCatch
             // If authenticated add the bearer token in the header
             if (!string.IsNullOrEmpty(AuthToken))
                 client.DefaultRequestHeaders.Authorization = AuthenticationHeaderValue.Parse("Bearer " + AuthToken);
-
+            else if (!string.IsNullOrEmpty(HttpContext.Current.Response.Cookies.Get("AuthToken").Value as string))
+                client.DefaultRequestHeaders.Authorization = AuthenticationHeaderValue.Parse("Bearer " + HttpContext.Current.Response.Cookies.Get("AuthToken").Value);
+            
             return client;
         }
 

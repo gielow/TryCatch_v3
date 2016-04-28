@@ -9,7 +9,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Protocol)
+            @Html.DisplayNameFor(model => model.Id)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.DateTime)
@@ -20,13 +20,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Protocol)
+            @Html.DisplayFor(modelItem => item.Id)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DateTime)
         </td>
         <td>
-            @Html.ActionLink("Details", "Details", new {  protocol= item.Protocol })
+            @Html.ActionLink("Details", "Details", new {  id = item.Id })
         </td>
     </tr>
 }

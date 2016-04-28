@@ -137,7 +137,8 @@ namespace TryCatch.Controllers
             if (res)
             {
                 FormsAuthentication.SetAuthCookie(model.Email, false);
-                //HttpContext.Cache["AuthToken"] = WebApiClient3.Instance.AuthToken;
+                Response.Cookies.Add(new HttpCookie("AuthToken", WebApiClient3.Instance.AuthToken));
+                
             }
 
             return res;
@@ -149,6 +150,11 @@ namespace TryCatch.Controllers
         public ActionResult LogOff()
         {
             FormsAuthentication.SignOut();
+            WebApiClient3.Instance.AuthToken = string.Empty;
+            Response.SetCookie(new HttpCookie("AuthToken", string.Empty));
+            Response.Cookies.Remove("AuthToken");
+
+
             return RedirectToAction("Index", "Article");
         }
 

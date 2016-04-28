@@ -79,12 +79,12 @@ namespace TryCatch.Controllers
         [Authorize]
         public async Task<ActionResult> Checkout()
         {
-            //await WebApiClient3.Instance.AuthenticateAsync(User.Identity.na)
             var cart = await GetCart();
 
             var url = string.Format("api/Cart/{0}/Checkout", cart.Guid);
             var order = await WebApiClient3.Instance.PostAsync<object, Order>(url, null);
-
+            // Clear the atual cart
+            HttpContext.Session["CartGuid"] = string.Empty;
             RedirectToAction("Details", "Order", new { id = order.Id });
             return View(order);
         }
