@@ -25,7 +25,7 @@ namespace TryCatch.Data
 
         public DbSet<Order> Orders { get; set; }
 
-        public DbSet<OrderItem> OrderItems { get; }
+        public DbSet<OrderItem> OrderItems { get; set; }
 
         public DbSet<Cart> Carts { get; set; }
 
@@ -33,7 +33,7 @@ namespace TryCatch.Data
         {
             return base.SaveChanges();
         }
-
+    
         public override Task<int> SaveChangesAsync()
         {
             return base.SaveChangesAsync();
