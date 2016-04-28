@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Security.Claims;
 using System.Web.Http;
 using System.Web.Http.Description;
 using TryCatch.Interfaces;
@@ -13,10 +14,12 @@ namespace TryCatch.Api.Controllers
     public class CartController : ApiController
     {
         ICartComponent _component;
+        ICustomerComponent _customerComponent;
 
-        public CartController(ICartComponent component)
+        public CartController(ICartComponent component, ICustomerComponent customerComponent)
         {
             _component = component;
+            _customerComponent = customerComponent;
         }
 
         [HttpPost]
@@ -75,7 +78,10 @@ namespace TryCatch.Api.Controllers
         [Route("api/Cart/{guid}/Checkout")]
         public IHttpActionResult Checkout(string guid)
         {
-            var order = _component.Checkout(guid, User.Identity.Name);
+            var customerId = Convert.ToInt32((User.Identity as ClaimsIdentity).Claims.First(c => c.Type.Equals("CustomerId")).Value);
+            var customer = _customerComponent.Get(customerId);
+            var cart = _component.Get(guid);
+            var order = _component.Checkout(cart, customer);
 
             return Ok(order);
         }

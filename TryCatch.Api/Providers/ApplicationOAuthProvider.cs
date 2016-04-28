@@ -36,11 +36,17 @@ namespace TryCatch.Api.Providers
         {
             var loginModel = new CustomerLoginModel() { Email = context.UserName, Password = context.Password };
             var user = _customerComponent.ValidateLogin(loginModel);
-            //var user = _repository.Customers.FirstOrDefault(c => c.Email == context.UserName && c.Password == context.Password);
+
+            if (user == null)
+            {
+                context.SetError("invalid_grant", "The user name or password is incorrect.");
+                return Task.FromResult<object>(null);
+            }
 
             var claims = new List<Claim>();
             claims.Add(new Claim(ClaimTypes.Name, user.FirstName));
             claims.Add(new Claim(ClaimTypes.Email, user.Email));
+            claims.Add(new Claim("CustomerId", user.Id.ToString()));
 
             var oAuthIdentity = new ClaimsIdentity(claims, OAuthDefaults.AuthenticationType);
             var cookiesIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationType);
