@@ -19,12 +19,12 @@ namespace TryCatch.Core
 
         public Customer Get(int id)
         {
-            throw new NotImplementedException();
+            return _repository.Customers.Find(id);
         }
 
         public List<Customer> GetMany()
         {
-            throw new NotImplementedException();
+            return _repository.Customers.ToList();
         }
 
         public Customer Put(Customer customer)

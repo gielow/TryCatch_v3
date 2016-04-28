@@ -31,6 +31,7 @@ namespace TryCatch.Core
         
         public Order Checkout(Cart cart, Customer customer)
         {
+            // Create the order
             var order = new Order();
             order.Customer = customer;
             order.Items = cart.Items;
@@ -38,7 +39,10 @@ namespace TryCatch.Core
             order.DateTime = DateTime.Now;
 
             _repository.Orders.Add(order);
-            _repository.Carts.Remove(cart);
+            
+            // Just to the EF do not delete the items of the order
+            //_repository.Entry<Cart>(cart).State = EntityState.Deleted;
+            
             _repository.SaveChanges();
 
             return order;

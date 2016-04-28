@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TryCatch.Interfaces;
 using TryCatch.Models;
+using System.Data.Entity;
 
 namespace TryCatch.Core
 {
@@ -19,12 +20,12 @@ namespace TryCatch.Core
 
         public Order Get(int id)
         {
-            return _repository.Orders.Find(id);
+            return _repository.Orders.Include(o => o.Customer).Include(o => o.Items).FirstOrDefault(o => o.Id == id);
         }
 
         public List<Order> GetMany()
         {
-            return _repository.Orders.ToList();
+            return _repository.Orders.Include(o => o.Customer).Include(o => o.Items).ToList();
         }
     }
 }
