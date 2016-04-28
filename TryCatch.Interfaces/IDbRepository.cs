@@ -16,6 +16,9 @@ namespace TryCatch.Interfaces
         Task<int> SaveChangesAsync();
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 
+        DbEntityEntry Entry(object entity);
+        DbEntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;
+
         DbSet<Order> Orders { get;  }
 
         DbSet<OrderItem> OrderItems { get; }
