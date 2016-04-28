@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace TryCatch.Models
 {
-    public class Article : Record
+    public class Article
     {
+        public long Id { get; set; }
         public string Description { get; set; }
         [DataType(DataType.Currency)]
         public decimal Price { get; set; }

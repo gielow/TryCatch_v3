@@ -6,12 +6,12 @@ D:\VSWorkspace\TryCatch_v2\TryCatch.Models\bin\Debug\TryCatch.Models.dll
 D:\VSWorkspace\TryCatch_v2\TryCatch.Models\bin\Debug\TryCatch.Models.pdb
 D:\VSWorkspace\TryCatch_v2\TryCatch.Models\obj\Debug\TryCatch.Models.dll
 D:\VSWorkspace\TryCatch_v2\TryCatch.Models\obj\Debug\TryCatch.Models.pdb
-E:\VSWorkspace\TryCatch_v3\TryCatch.Models\bin\Debug\TryCatch.Models.dll
-E:\VSWorkspace\TryCatch_v3\TryCatch.Models\bin\Debug\TryCatch.Models.pdb
-E:\VSWorkspace\TryCatch_v3\TryCatch.Models\obj\Debug\TryCatch.Models.dll
-E:\VSWorkspace\TryCatch_v3\TryCatch.Models\obj\Debug\TryCatch.Models.pdb
 D:\VSWorkspace\TryCatch_v3\TryCatch.Models\bin\Debug\TryCatch.Models.dll
 D:\VSWorkspace\TryCatch_v3\TryCatch.Models\bin\Debug\TryCatch.Models.pdb
 D:\VSWorkspace\TryCatch_v3\TryCatch.Models\obj\Debug\TryCatch.Models.csprojResolveAssemblyReference.cache
 D:\VSWorkspace\TryCatch_v3\TryCatch.Models\obj\Debug\TryCatch.Models.dll
 D:\VSWorkspace\TryCatch_v3\TryCatch.Models\obj\Debug\TryCatch.Models.pdb
+E:\VSWorkspace\TryCatch_v3\TryCatch.Models\bin\Debug\TryCatch.Models.dll
+E:\VSWorkspace\TryCatch_v3\TryCatch.Models\bin\Debug\TryCatch.Models.pdb
+E:\VSWorkspace\TryCatch_v3\TryCatch.Models\obj\Debug\TryCatch.Models.dll
+E:\VSWorkspace\TryCatch_v3\TryCatch.Models\obj\Debug\TryCatch.Models.pdb

@@ -15,13 +15,15 @@ namespace TryCatch.Models
         Delivered
     }
 
-    public class Order : Record
+    public class Order
     {
         [Key]
         [Display(Name = "Protocol")]
-        public new int Id { get; set; }
+        public int Id { get; set; }
+        [Required]
         public Customer Customer { get; set; }
         [DataType(DataType.DateTime)]
+        [Required]
         public DateTime DateTime { get; set; }
         public List<OrderItem> Items { get; set; }
         public OrderStatus Status { get; set; }

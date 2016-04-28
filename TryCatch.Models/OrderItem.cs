@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TryCatch.Models
 {
-    public class OrderItem// : Record
+    public class OrderItem
     {
         [Key]
         public long Id { get; set; }
