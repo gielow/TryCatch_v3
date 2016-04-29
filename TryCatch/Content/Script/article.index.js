@@ -3,8 +3,7 @@
     $.ajax({
         type: 'GET',        
         //url: 'http://localhost/TryCatchApi_v3/api/Article/Page/' + pageNumber,
-        url: './Article/',
-        data: "{ 'pageNumber': " + pageNumber + "}",
+        url: './Article/PageJson/?number=' + pageNumber,
         cache: false,
         contentType: 'application/json',
         headers: { Accept : "application/json"},
@@ -14,6 +13,9 @@
                 $('#articles > tbody').append("<tr><td>" + item.Description + "</td><td>" + item.Price + "</td>" +
                     "<td><a href='#' onclick='javascript:addItem(" + item.Id + ", 1)'>Add to cart</a></td></tr>");
             });
+        },
+        error: function () {
+            toastr.error("Error at loading articles.");
         }
     });
 }

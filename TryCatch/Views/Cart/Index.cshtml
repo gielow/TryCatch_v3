@@ -33,8 +33,7 @@
     </tr>
 </table>
 
-@Html.ActionLink("Checkout", "Checkout", new { guid = Model.Guid },
-    new { onclick = "return confirm('Confirm cart checkout?');" })
+@Html.ActionLink("Checkout", "ConfirmCheckout", "Cart")
 
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/Content/Script/cart.js")

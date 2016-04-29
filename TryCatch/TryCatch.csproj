@@ -286,6 +286,8 @@
     <Content Include="Views\Order\Details.cshtml" />
     <Content Include="Views\Cart\Checkout.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Article\Details.cshtml" />
+    <Content Include="Views\Cart\ConfirmCheckout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

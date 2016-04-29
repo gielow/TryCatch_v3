@@ -24,9 +24,10 @@ namespace TryCatch.Controllers
             return View(await GetCart());
         }
 
-        public JsonResult GetJson()
+        [HttpGet]
+        public async Task<JsonResult> GetJson()
         {
-            return Json(GetCart(), JsonRequestBehavior.AllowGet);
+            return Json(await GetCart(), JsonRequestBehavior.AllowGet);
         }
 
         private async Task<Cart> GetCart()
@@ -60,25 +61,59 @@ namespace TryCatch.Controllers
         [HttpPost]
         public async Task AddItem(int articleId, int quantity)
         {
-            if (string.IsNullOrEmpty(HttpContext.Session["CartGuid"] as string))
-                await GetCart();
+            try
+            {
+                if (string.IsNullOrEmpty(HttpContext.Session["CartGuid"] as string))
+                    await GetCart();
 
-            var url = string.Format("api/Cart/{0}/Items/{1}/{2}",
-                HttpContext.Session["CartGuid"] as string, articleId, quantity);
-            
-            await WebApiClient3.Instance.PostAsync<object, Cart>(url, null);
+                var url = string.Format("api/Cart/{0}/Items/{1}/{2}",
+                    HttpContext.Session["CartGuid"] as string, articleId, quantity);
+
+                await WebApiClient3.Instance.PostAsync<object, Cart>(url, null);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(string.Format("Error at add article {0} to the cart: {1}", articleId, ex.Message));
+            }
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> AddItemJson(int articleId, int quantity)
+        {
+            await this.AddItem(articleId, quantity);
+            return Json(string.Empty);
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> RemoveItemJson(int articleId, int quantity)
+        {
+            await this.RemoveItem(articleId, quantity);
+            return Json(string.Empty);
         }
 
         [HttpDelete]
         public async Task RemoveItem(int articleId, int quantity)
         {
-            if (string.IsNullOrEmpty(HttpContext.Session["CartGuid"] as string))
-                await GetCart();
+            try
+            {
+                if (string.IsNullOrEmpty(HttpContext.Session["CartGuid"] as string))
+                    await GetCart();
 
-            var url = string.Format("api/Cart/{0}/Items/{1}/{2}",
-                HttpContext.Session["CartGuid"] as string, articleId, quantity);
+                var url = string.Format("api/Cart/{0}/Items/{1}/{2}",
+                    HttpContext.Session["CartGuid"] as string, articleId, quantity);
 
-            await WebApiClient3.Instance.DeleteAsync(url);
+                await WebApiClient3.Instance.DeleteAsync(url);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(string.Format("Error at remove article {0} of the cart: {1}", articleId, ex.Message));
+            }
+        }
+
+        public async Task<ActionResult> ConfirmCheckout()
+        {
+            var cart = await GetCart();
+            return View(cart);
         }
 
         [Authorize]

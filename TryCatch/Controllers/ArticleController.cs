@@ -13,26 +13,34 @@ namespace TryCatch.Controllers
         // GET: Article
         public async Task<ActionResult> Index(int? pageNumber)
         {
-            // Fixed without page because the articles are loaded by ajax directly in the api.
-            var result = await WebApiClient3.Instance.GetAsync<IEnumerable<Article>>(
-                string.Format("api/Article/Page/{0}", pageNumber.HasValue ? pageNumber.Value : 1));
+            var result = await GetArticles(pageNumber.HasValue ? pageNumber.Value : 1);
             return View(result);
         }
 
         public async Task<ActionResult> Page(int number)
         {
-            // Fixed without page because the articles are loaded by ajax directly in the api.
-            var result = await WebApiClient3.Instance.GetAsync<IEnumerable<Article>>(
-                string.Format("api/Article/Page/{0}", number));
-
+            var result = await GetArticles(number);
             return View(result);
+        }
+        
+        [HttpGet]
+        public async Task<JsonResult> PageJson(int number)
+        {
+            var result = await GetArticles(number);
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        private async Task<IEnumerable<Article>> GetArticles(int pageNumber)
+        {
+            return await WebApiClient3.Instance.GetAsync<IEnumerable<Article>>(
+                string.Format("api/Article/Page/{0}", pageNumber));
         }
 
         // GET: Article/Details/5
         public async Task<ActionResult> Details(int id)
         {
-            var result = await WebApiClient3.Instance.GetAsync<Article>(string.Format("api/Article/Page/{0}", id));
-            return View(result);
+            var article = await WebApiClient3.Instance.GetAsync<Article>(string.Format("api/Article/{0}", id));
+            return View(article);
         }
     }
 }

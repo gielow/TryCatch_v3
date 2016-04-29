@@ -1,92 +1,50 @@
 ﻿
 function addItem(articleId, quantity) {
 
-    itemAction(articleId, quantity, 'POST', 'AddItem', 'Article has been successfully added!');
+    itemAction(articleId, quantity, 'AddItemJson', 'Article has been successfully added!');
 }
 
 function removeItem(articleId, quantity) {
 
-    itemAction(articleId, quantity, 'DELETE', 'RemoveItem', 'Article has been successfully removed!');
+    itemAction(articleId, quantity, 'RemoveItemJson', 'Article has been successfully removed!');
 
     window.location.reload();
 }
 
-function itemAction(articleId, quantity, action, method, message) {
-    //var cartGuid = getCartGuid();
-    
-    /*$.ajax({
-        type: 'POST',
-        url: './Cart/'+action+'/' + articleId + '/' + quantity,
-        cache: false,
-        contentType: 'application/json',
-        success: function (data) {
-            alert(message);
-        },
-        error: function () {
-            return false;
-        }
-    });*/
+function itemAction(articleId, quantity, method, message) {
 
-    toastr.success("The item was added the cart!", "Cart");
-
-    $.ajax({
-        //url: "./Cart/" + action + "/" + articleId + "/" + quantity,
+    $.ajax({        
         url: "./Cart/" + method,
-        type: action,
+        type: 'POST',
         data: "{'articleId': " + articleId + ", 'quantity': " + quantity + "}",
         dataType: "json",
         traditional: true,
         contentType: "application/json; charset=utf-8",
         success: function (data) {
-            if (data.status == "Success") {
-                alert("Done");
-                //$(element).closest("form").submit(); //<------------ submit form
-            } else {
-                alert("Error occurs on the Database level!");
-            }
+            toastr.success(message);
+            refreshCartMenu();
         },
         error: function () {
-            alert("An error has occured!!!");
+            toastr.error("An error has occured!");
         }
     });
 }
-/*
-function getCartGuid() {
-    if (sessionStorage.getItem("CartGuid") !== null && sessionStorage.getItem("CartGuid").length > 0)
-        return sessionStorage.getItem("CartGuid");
-
-    $.ajax({
-        type: 'GET',
-        url: './Cart/New',
-        cache: false,
-        contentType: 'application/json',
-        headers: { Accept: "application/json" },
-        success: function (data) {
-            debugger;
-            sessionStorage.setItem("CartGuid", eval(data).Guid);
-
-            return eval(data).Guid;
-        },
-        error: function () {
-            console.error('Error at creating new session cart');
-        }
-    });
-}
-
-getCartGuid();*/
 
 function refreshCartMenu() {
+
     $.ajax({
         type: 'GET',
-        url: './Cart/Get',
+        url: './Cart/GetJson/',
         cache: false,
         contentType: 'application/json',
         success: function (data) {
-            alert(eval(data));
-            $("#cartMenu").html(eval(data).Guid);
+            if (eval(data).Items.length > 0)
+                $("#cartMenu").html('Cart (' + eval(data).Items.length + ')');
+            else
+                $("#cartMenu").html('Cart');
         },
         error: function () {
-            console.error('Error at creating new session cart');
+            toastr.error('Error at creating new session cart');
         }
     });
 }

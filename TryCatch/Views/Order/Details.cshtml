@@ -35,14 +35,22 @@
     {
         <tr>
             <td>@item.ArticleName</td>
-            <td>$ @item.ArticlePrice.ToString("C")</td>
+            <td>@item.ArticlePrice.ToString("C")</td>
             <td>@item.Quantity</td>
-            <td>$ @item.Total.ToString("C")</td>
+            <td>@item.Total.ToString("C")</td>
         </tr>
     }
     <tr><td colspan="5"></td></tr>
     <tr>
         <th colspan="3">Sub total</th>
         <th>@Model.Items.Sum(m => m.Total).ToString("C")</th>
+    </tr>
+    <tr>
+        <th colspan="3">VAT</th>
+        <th>@Model.VAT.ToString("C")</th>
+    </tr>
+    <tr>
+        <th colspan="3">Sub total</th>
+        <th>@((Model.Items.Sum(m => m.Total) + @Model.VAT).ToString("C"))</th>
     </tr>
 </table>

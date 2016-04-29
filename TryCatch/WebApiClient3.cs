@@ -13,7 +13,10 @@ namespace TryCatch
     public class WebApiClient3
     {
         public string AuthToken { get; set; }
-        public string BaseAddress { get { return "http://localhost/TryCatchApi_v3/"; } }
+        public string BaseAddress
+        {
+            get { return System.Configuration.ConfigurationManager.AppSettings["WebApiBaseAddress"]; }
+        }
 
         private static WebApiClient3 _instance;
 
