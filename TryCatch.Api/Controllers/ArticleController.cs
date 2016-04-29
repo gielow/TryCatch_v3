@@ -35,7 +35,8 @@ namespace TryCatch.Api.Controllers
         [HttpGet]
         public IQueryable<Article> Page(int number = 1)
         {
-            return _component.GetMany().Skip((number -1) * 10).Take(10).AsQueryable();
+            var pageSize = Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["DefaultPageSize"]);
+            return _component.GetMany().Skip((number -1) * pageSize).Take(pageSize).AsQueryable();
         }
 
         // GET: api/Articles/5
