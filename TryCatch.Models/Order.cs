@@ -26,6 +26,7 @@ namespace TryCatch.Models
         [Required]
         public DateTime DateTime { get; set; }
         public List<OrderItem> Items { get; set; }
+        public decimal VAT { get; set; }
         public OrderStatus Status { get; set; }
     }
 }

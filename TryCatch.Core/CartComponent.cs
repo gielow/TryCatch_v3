@@ -35,6 +35,7 @@ namespace TryCatch.Core
             var order = new Order();
             order.Customer = customer;
             order.Items = cart.Items;
+            order.VAT = cart.TotalVAT;
             order.Status = OrderStatus.WaitingPayment;
             order.DateTime = DateTime.Now;
 
@@ -103,7 +104,10 @@ namespace TryCatch.Core
                 cartItem.Quantity -= quantity;
 
                 if (cartItem.Quantity < 0)
-                    cart.Items.Remove(cartItem);
+                {
+                    cart.Items.RemoveAll(i => i.ArticleId == cartItem.ArticleId);
+                    _repository.Entry(cartItem).State = EntityState.Deleted;
+                }
             }
             
             _repository.Carts.Attach(cart);

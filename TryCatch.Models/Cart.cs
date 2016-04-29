@@ -24,11 +24,27 @@ namespace TryCatch.Models
         [Required]
         public string Guid { get; set; }
         public List<OrderItem> Items { get; set; }
-        public decimal Total
+
+        public decimal TotalArticles
         {
             get
             {
                 return Items.Sum(i => i.Total);
+            }
+        }
+        public decimal Total
+        {
+            get
+            {
+                return Items.Sum(i => i.Total) + this.TotalVAT;
+            }
+        }
+
+        public decimal TotalVAT
+        {
+            get
+            {
+                return (Items.Sum(i => i.Total) / 100) * 20;
             }
         }
 
