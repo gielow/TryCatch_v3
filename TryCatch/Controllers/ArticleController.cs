@@ -11,10 +11,20 @@ namespace TryCatch.Controllers
     public class ArticleController : Controller
     {
         // GET: Article
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(int? pageNumber)
         {
             // Fixed without page because the articles are loaded by ajax directly in the api.
-            var result = await WebApiClient3.Instance.GetAsync<IEnumerable<Article>>("api/Article/Page/");
+            var result = await WebApiClient3.Instance.GetAsync<IEnumerable<Article>>(
+                string.Format("api/Article/Page/{0}", pageNumber.HasValue ? pageNumber.Value : 1));
+            return View(result);
+        }
+
+        public async Task<ActionResult> Page(int number)
+        {
+            // Fixed without page because the articles are loaded by ajax directly in the api.
+            var result = await WebApiClient3.Instance.GetAsync<IEnumerable<Article>>(
+                string.Format("api/Article/Page/{0}", number));
+
             return View(result);
         }
 

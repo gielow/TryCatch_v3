@@ -22,7 +22,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Articles", "Index", "Article", new { number = 1 }, null)</li>
-                    <li>@Html.ActionLink("Cart", "Index", "Cart", new { guid = "" }, null)</li>
+                    <li>@Html.ActionLink("Cart", "Index", "Cart", new { }, new { id = "cartMenu" })</li>
                     <li>@Html.ActionLink("Orders", "Index", "Order", new {  }, null)</li>
                 </ul>
                 @Html.Partial("_LoginPartial")

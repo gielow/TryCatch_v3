@@ -2,7 +2,9 @@
     //debugger;
     $.ajax({
         type: 'GET',        
-        url: 'http://localhost/TryCatchApi_v2/api/Article/Page/' + pageNumber,
+        //url: 'http://localhost/TryCatchApi_v3/api/Article/Page/' + pageNumber,
+        url: './Article/',
+        data: "{ 'pageNumber': " + pageNumber + "}",
         cache: false,
         contentType: 'application/json',
         headers: { Accept : "application/json"},

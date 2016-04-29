@@ -24,6 +24,11 @@ namespace TryCatch.Controllers
             return View(await GetCart());
         }
 
+        public JsonResult GetJson()
+        {
+            return Json(GetCart(), JsonRequestBehavior.AllowGet);
+        }
+
         private async Task<Cart> GetCart()
         {
             var guid = HttpContext.Session["CartGuid"] as string;

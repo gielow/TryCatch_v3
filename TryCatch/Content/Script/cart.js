@@ -74,3 +74,21 @@ function getCartGuid() {
 }
 
 getCartGuid();*/
+
+function refreshCartMenu() {
+    $.ajax({
+        type: 'GET',
+        url: './Cart/Get',
+        cache: false,
+        contentType: 'application/json',
+        success: function (data) {
+            alert(eval(data));
+            $("#cartMenu").html(eval(data).Guid);
+        },
+        error: function () {
+            console.error('Error at creating new session cart');
+        }
+    });
+}
+
+refreshCartMenu();
