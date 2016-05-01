@@ -64,7 +64,6 @@ D:\VSWorkspace\TryCatch_v3\TryCatch.IoC\bin\Debug\Newtonsoft.Json.xml
 D:\VSWorkspace\TryCatch_v3\TryCatch.IoC\bin\Debug\System.Net.Http.Formatting.xml
 D:\VSWorkspace\TryCatch_v3\TryCatch.IoC\bin\Debug\System.Web.Http.xml
 D:\VSWorkspace\TryCatch_v3\TryCatch.IoC\bin\Debug\System.Web.Http.WebHost.xml
-D:\VSWorkspace\TryCatch_v3\TryCatch.IoC\bin\Debug\System.Web.Mvc.xml
 D:\VSWorkspace\TryCatch_v3\TryCatch.IoC\bin\Debug\System.Web.Razor.xml
 D:\VSWorkspace\TryCatch_v3\TryCatch.IoC\bin\Debug\System.Web.WebPages.Razor.xml
 D:\VSWorkspace\TryCatch_v3\TryCatch.IoC\bin\Debug\System.Web.WebPages.xml

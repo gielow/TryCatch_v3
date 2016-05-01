@@ -1,0 +1,10 @@
+﻿@model IEnumerable<TryCatch.Models.Article>
+        
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@Html.DisplayFor(modelItem => item.Description)</td>
+        <td>@Html.DisplayFor(modelItem => item.Price)</td>
+        <td><a href="#" onclick="javascript:addItem(@item.Id, 1);">Add to cart</a></td>
+    </tr>
+}

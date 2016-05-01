@@ -13,27 +13,20 @@ namespace TryCatch.Controllers
         // GET: Article
         public async Task<ActionResult> Index(int? pageNumber)
         {
-            var result = await GetArticles(pageNumber.HasValue ? pageNumber.Value : 1);
+            var result = await GetArticles(pageNumber);
             return View(result);
         }
 
         public async Task<ActionResult> Page(int number)
         {
             var result = await GetArticles(number);
-            return View(result);
-        }
-        
-        [HttpGet]
-        public async Task<JsonResult> PageJson(int number)
-        {
-            var result = await GetArticles(number);
-            return Json(result, JsonRequestBehavior.AllowGet);
+            return PartialView("~/Views/Article/_ArticlesGridPartial.cshtml", result);
         }
 
-        private async Task<IEnumerable<Article>> GetArticles(int pageNumber)
+        private async Task<IEnumerable<Article>> GetArticles(int? pageNumber)
         {
             return await WebApiClient3.Instance.GetAsync<IEnumerable<Article>>(
-                string.Format("api/Article/Page/{0}", pageNumber));
+                string.Format("api/Article/Page/{0}", pageNumber.HasValue ? pageNumber.Value : 1));
         }
 
         // GET: Article/Details/5

@@ -6,9 +6,22 @@ function addItem(articleId, quantity) {
 
 function removeItem(articleId, quantity) {
 
-    itemAction(articleId, quantity, 'RemoveItemJson', 'Article has been successfully removed!');
-
-    window.location.reload();
+    $.ajax({
+        type: 'DELETE',
+        url: "./Cart/RemoveItem",
+        data: "{'articleId': " + articleId + ", 'quantity': " + quantity + "}",
+        cache: false,
+        contentType: 'application/json',
+        success: function (data) {
+            toastr.success('Article has been successfully removed!');
+            //debugger;
+            $('#cart > #cartItems').html(data);
+            refreshCartMenu();
+        },
+        error: function () {
+            toastr.error("Error at removing cart item.");
+        }
+    });
 }
 
 function itemAction(articleId, quantity, method, message) {
@@ -17,15 +30,14 @@ function itemAction(articleId, quantity, method, message) {
         url: "./Cart/" + method,
         type: 'POST',
         data: "{'articleId': " + articleId + ", 'quantity': " + quantity + "}",
-        dataType: "json",
         traditional: true,
-        contentType: "application/json; charset=utf-8",
+        contentType: 'application/json',
         success: function (data) {
             toastr.success(message);
             refreshCartMenu();
         },
         error: function () {
-            toastr.error("An error has occured!");
+            toastr.error("Error at " + method + " of the cart.");
         }
     });
 }

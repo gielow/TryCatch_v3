@@ -92,7 +92,7 @@ namespace TryCatch.Controllers
         }
 
         [HttpDelete]
-        public async Task RemoveItem(int articleId, int quantity)
+        public async Task<ActionResult> RemoveItem(int articleId, int quantity)
         {
             try
             {
@@ -103,6 +103,8 @@ namespace TryCatch.Controllers
                     HttpContext.Session["CartGuid"] as string, articleId, quantity);
 
                 await WebApiClient3.Instance.DeleteAsync(url);
+
+                return PartialView("~/Views/Cart/_CartItemsGridPartial.cshtml", await GetCart());
             }
             catch (Exception ex)
             {
@@ -110,10 +112,19 @@ namespace TryCatch.Controllers
             }
         }
 
-        public async Task<ActionResult> ConfirmCheckout()
+        public async Task<ActionResult> ConfirmCheckout(string returnUrl)
         {
             var cart = await GetCart();
+
+            if (!string.IsNullOrEmpty(returnUrl))
+                Redirect(returnUrl);
+
             return View(cart);
+        }
+
+        public async Task<ActionResult> ConfirmCheckout()
+        {
+            return await ConfirmCheckout(string.Empty);
         }
 
         [Authorize]

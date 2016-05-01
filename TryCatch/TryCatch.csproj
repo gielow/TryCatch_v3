@@ -288,6 +288,8 @@
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Article\Details.cshtml" />
     <Content Include="Views\Cart\ConfirmCheckout.cshtml" />
+    <Content Include="Views\Article\_ArticlesGridPartial.cshtml" />
+    <Content Include="Views\Cart\_CartItemsGridPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

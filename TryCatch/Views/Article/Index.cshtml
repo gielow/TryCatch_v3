@@ -12,19 +12,10 @@
             <th>@Html.DisplayNameFor(model => model.Description)</th>
             <th>@Html.DisplayNameFor(model => model.Price)</th>
             <th></th>
+            
         </tr>
     </thead>
-    <tbody>
-        @*
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@Html.DisplayFor(modelItem => item.Description)</td>
-            <td>@Html.DisplayFor(modelItem => item.Price)</td>
-            <td>@Html.ActionLink("Add to cart", "Add", new { id = item.Id })</td>
-        </tr>
-    }*@
-    </tbody>
+    <tbody/>
 </table>
 Page <input type="number" min="1" value="1" onchange="javascript:loadArticles(this.value)"/>
 @Scripts.Render("~/bundles/jquery")
