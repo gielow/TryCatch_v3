@@ -14,6 +14,9 @@ namespace TryCatch.Controllers
         public async Task<ActionResult> Index(int? pageNumber)
         {
             var result = await GetArticles(pageNumber);
+            foreach (var article in result)
+                AjustImagesUrls(article);
+
             return View(result);
         }
 
@@ -30,10 +33,28 @@ namespace TryCatch.Controllers
         }
 
         // GET: Article/Details/5
-        public async Task<ActionResult> Details(int id)
+        [Route("Article/Details/{id}")]
+        public async Task<ActionResult> Details(int id, bool? partial)
         {
             var article = await WebApiClient3.Instance.GetAsync<Article>(string.Format("api/Article/{0}", id));
+            AjustImagesUrls(article);
+            
+            if (partial.HasValue && partial.Value)
+                return PartialView("~/Views/Article/Details.cshtml", article);
+
             return View(article);
+        }
+
+        private void AjustImagesUrls(Article article)
+        {
+            var imgs = new List<string>();
+            var baseUrl = System.Configuration.ConfigurationManager.AppSettings["WebApiBaseAddress"];
+            foreach (var img in article.Images)
+            {
+                imgs.Add(string.Format("{0}{1}", baseUrl, img));
+            }
+
+            article.Images = imgs;
         }
     }
 }

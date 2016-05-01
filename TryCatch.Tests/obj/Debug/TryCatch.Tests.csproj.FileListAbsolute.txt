@@ -114,3 +114,9 @@ E:\VSWorkspace\TryCatch_v3\TryCatch.Tests\bin\Debug\System.Web.WebPages.Razor.xm
 E:\VSWorkspace\TryCatch_v3\TryCatch.Tests\obj\Debug\TryCatch.Tests.csprojResolveAssemblyReference.cache
 E:\VSWorkspace\TryCatch_v3\TryCatch.Tests\obj\Debug\TryCatch.Tests.dll
 E:\VSWorkspace\TryCatch_v3\TryCatch.Tests\obj\Debug\TryCatch.Tests.pdb
+E:\VSWorkspace\TryCatch_v3\TryCatch.Tests\bin\Debug\TryCatch.Data.dll
+E:\VSWorkspace\TryCatch_v3\TryCatch.Tests\bin\Debug\TryCatch.Interfaces.dll
+E:\VSWorkspace\TryCatch_v3\TryCatch.Tests\bin\Debug\EntityFramework.dll
+E:\VSWorkspace\TryCatch_v3\TryCatch.Tests\bin\Debug\TryCatch.Data.pdb
+E:\VSWorkspace\TryCatch_v3\TryCatch.Tests\bin\Debug\TryCatch.Interfaces.pdb
+E:\VSWorkspace\TryCatch_v3\TryCatch.Tests\bin\Debug\EntityFramework.xml

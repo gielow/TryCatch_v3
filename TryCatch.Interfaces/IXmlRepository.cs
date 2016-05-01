@@ -9,6 +9,6 @@ namespace TryCatch.Interfaces
 {
     public interface IXmlRepository
     {
-        List<Article> Articles { get; }
+        List<Article> Articles { get; set; }
     }
 }

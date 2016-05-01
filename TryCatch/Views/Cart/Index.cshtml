@@ -20,7 +20,19 @@
     </tbody>
 </table>
 
+<div class="modal fade" id="articleModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+</div>
+
 @Html.ActionLink("Checkout", "ConfirmCheckout", "Cart")
 
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/Content/Script/cart.js")
+@Scripts.Render("~/Content/Script/article.index.js")

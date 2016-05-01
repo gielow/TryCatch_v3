@@ -112,21 +112,12 @@ namespace TryCatch.Controllers
             }
         }
 
-        public async Task<ActionResult> ConfirmCheckout(string returnUrl)
-        {
-            var cart = await GetCart();
-
-            if (!string.IsNullOrEmpty(returnUrl))
-                Redirect(returnUrl);
-
-            return View(cart);
-        }
-
         public async Task<ActionResult> ConfirmCheckout()
         {
-            return await ConfirmCheckout(string.Empty);
+            var cart = await GetCart();
+            return View(cart);
         }
-
+        
         [Authorize]
         public async Task<ActionResult> Checkout()
         {

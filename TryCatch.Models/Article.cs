@@ -11,9 +11,12 @@ namespace TryCatch.Models
     {
         [Key]
         public long Id { get; set; }
+        [Required]
         public string Name { get; set; }
         public string Description { get; set; }
         [DataType(DataType.Currency)]
+        [Required]
         public decimal Price { get; set; }
+        public List<string> Images { get; set; }
     }
 }

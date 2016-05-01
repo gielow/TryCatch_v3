@@ -3,8 +3,11 @@
 @foreach (var item in Model)
 {
     <tr>
-        <td>@Html.DisplayFor(modelItem => item.Description)</td>
+        <td>@Html.DisplayFor(modelItem => item.Name)</td>
         <td>@Html.DisplayFor(modelItem => item.Price)</td>
-        <td><a href="#" onclick="javascript:addItem(@item.Id, 1);">Add to cart</a></td>
+        <td>
+            <a href="#" onclick="javascript:showArticle(@item.Id);">Details</a> | 
+            <a href="#" onclick="javascript:addItem(@item.Id, 1);">Add to cart</a>
+        </td>
     </tr>
 }

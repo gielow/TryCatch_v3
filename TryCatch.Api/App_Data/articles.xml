@@ -1,253 +1,503 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfArticle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Article>
     <Id>1</Id>
-    <Description>Article 1</Description>
+    <Name>Article 1</Name>
+    <Description>Description of article 1</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/9.jpg</string>
+      <string>Content/Images/Articles/7.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>2</Id>
-    <Description>Article 2</Description>
+    <Name>Article 2</Name>
+    <Description>Description of article 2</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/3.jpg</string>
+      <string>Content/Images/Articles/9.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>3</Id>
-    <Description>Article 3</Description>
+    <Name>Article 3</Name>
+    <Description>Description of article 3</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/9.jpg</string>
+      <string>Content/Images/Articles/2.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>4</Id>
-    <Description>Article 4</Description>
+    <Name>Article 4</Name>
+    <Description>Description of article 4</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/1.jpg</string>
+      <string>Content/Images/Articles/3.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>5</Id>
-    <Description>Article 5</Description>
+    <Name>Article 5</Name>
+    <Description>Description of article 5</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/5.jpg</string>
+      <string>Content/Images/Articles/1.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>6</Id>
-    <Description>Article 6</Description>
+    <Name>Article 6</Name>
+    <Description>Description of article 6</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/5.jpg</string>
+      <string>Content/Images/Articles/4.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>7</Id>
-    <Description>Article 7</Description>
+    <Name>Article 7</Name>
+    <Description>Description of article 7</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/9.jpg</string>
+      <string>Content/Images/Articles/9.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>8</Id>
-    <Description>Article 8</Description>
+    <Name>Article 8</Name>
+    <Description>Description of article 8</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/4.jpg</string>
+      <string>Content/Images/Articles/8.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>9</Id>
-    <Description>Article 9</Description>
+    <Name>Article 9</Name>
+    <Description>Description of article 9</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/1.jpg</string>
+      <string>Content/Images/Articles/1.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>10</Id>
-    <Description>Article 10</Description>
+    <Name>Article 10</Name>
+    <Description>Description of article 10</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/3.jpg</string>
+      <string>Content/Images/Articles/4.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>11</Id>
-    <Description>Article 11</Description>
+    <Name>Article 11</Name>
+    <Description>Description of article 11</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/2.jpg</string>
+      <string>Content/Images/Articles/7.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>12</Id>
-    <Description>Article 12</Description>
+    <Name>Article 12</Name>
+    <Description>Description of article 12</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/1.jpg</string>
+      <string>Content/Images/Articles/1.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>13</Id>
-    <Description>Article 13</Description>
+    <Name>Article 13</Name>
+    <Description>Description of article 13</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/8.jpg</string>
+      <string>Content/Images/Articles/5.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>14</Id>
-    <Description>Article 14</Description>
+    <Name>Article 14</Name>
+    <Description>Description of article 14</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/3.jpg</string>
+      <string>Content/Images/Articles/4.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>15</Id>
-    <Description>Article 15</Description>
+    <Name>Article 15</Name>
+    <Description>Description of article 15</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/3.jpg</string>
+      <string>Content/Images/Articles/2.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>16</Id>
-    <Description>Article 16</Description>
+    <Name>Article 16</Name>
+    <Description>Description of article 16</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/9.jpg</string>
+      <string>Content/Images/Articles/7.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>17</Id>
-    <Description>Article 17</Description>
+    <Name>Article 17</Name>
+    <Description>Description of article 17</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/9.jpg</string>
+      <string>Content/Images/Articles/7.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>18</Id>
-    <Description>Article 18</Description>
+    <Name>Article 18</Name>
+    <Description>Description of article 18</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/1.jpg</string>
+      <string>Content/Images/Articles/2.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>19</Id>
-    <Description>Article 19</Description>
+    <Name>Article 19</Name>
+    <Description>Description of article 19</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/2.jpg</string>
+      <string>Content/Images/Articles/1.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>20</Id>
-    <Description>Article 20</Description>
+    <Name>Article 20</Name>
+    <Description>Description of article 20</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/6.jpg</string>
+      <string>Content/Images/Articles/8.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>21</Id>
-    <Description>Article 21</Description>
+    <Name>Article 21</Name>
+    <Description>Description of article 21</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/8.jpg</string>
+      <string>Content/Images/Articles/4.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>22</Id>
-    <Description>Article 22</Description>
+    <Name>Article 22</Name>
+    <Description>Description of article 22</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/5.jpg</string>
+      <string>Content/Images/Articles/3.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>23</Id>
-    <Description>Article 23</Description>
+    <Name>Article 23</Name>
+    <Description>Description of article 23</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/9.jpg</string>
+      <string>Content/Images/Articles/8.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>24</Id>
-    <Description>Article 24</Description>
+    <Name>Article 24</Name>
+    <Description>Description of article 24</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/6.jpg</string>
+      <string>Content/Images/Articles/6.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>25</Id>
-    <Description>Article 25</Description>
+    <Name>Article 25</Name>
+    <Description>Description of article 25</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/4.jpg</string>
+      <string>Content/Images/Articles/7.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>26</Id>
-    <Description>Article 26</Description>
+    <Name>Article 26</Name>
+    <Description>Description of article 26</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/5.jpg</string>
+      <string>Content/Images/Articles/2.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>27</Id>
-    <Description>Article 27</Description>
+    <Name>Article 27</Name>
+    <Description>Description of article 27</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/7.jpg</string>
+      <string>Content/Images/Articles/5.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>28</Id>
-    <Description>Article 28</Description>
+    <Name>Article 28</Name>
+    <Description>Description of article 28</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/3.jpg</string>
+      <string>Content/Images/Articles/3.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>29</Id>
-    <Description>Article 29</Description>
+    <Name>Article 29</Name>
+    <Description>Description of article 29</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/7.jpg</string>
+      <string>Content/Images/Articles/3.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>30</Id>
-    <Description>Article 30</Description>
+    <Name>Article 30</Name>
+    <Description>Description of article 30</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/1.jpg</string>
+      <string>Content/Images/Articles/4.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>31</Id>
-    <Description>Article 31</Description>
+    <Name>Article 31</Name>
+    <Description>Description of article 31</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/9.jpg</string>
+      <string>Content/Images/Articles/7.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>32</Id>
-    <Description>Article 32</Description>
+    <Name>Article 32</Name>
+    <Description>Description of article 32</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/9.jpg</string>
+      <string>Content/Images/Articles/4.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>33</Id>
-    <Description>Article 33</Description>
+    <Name>Article 33</Name>
+    <Description>Description of article 33</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/2.jpg</string>
+      <string>Content/Images/Articles/7.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>34</Id>
-    <Description>Article 34</Description>
+    <Name>Article 34</Name>
+    <Description>Description of article 34</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/5.jpg</string>
+      <string>Content/Images/Articles/2.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>35</Id>
-    <Description>Article 35</Description>
+    <Name>Article 35</Name>
+    <Description>Description of article 35</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/8.jpg</string>
+      <string>Content/Images/Articles/2.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>36</Id>
-    <Description>Article 36</Description>
+    <Name>Article 36</Name>
+    <Description>Description of article 36</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/6.jpg</string>
+      <string>Content/Images/Articles/9.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>37</Id>
-    <Description>Article 37</Description>
+    <Name>Article 37</Name>
+    <Description>Description of article 37</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/4.jpg</string>
+      <string>Content/Images/Articles/5.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>38</Id>
-    <Description>Article 38</Description>
+    <Name>Article 38</Name>
+    <Description>Description of article 38</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/6.jpg</string>
+      <string>Content/Images/Articles/7.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>39</Id>
-    <Description>Article 39</Description>
+    <Name>Article 39</Name>
+    <Description>Description of article 39</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/2.jpg</string>
+      <string>Content/Images/Articles/7.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>40</Id>
-    <Description>Article 40</Description>
+    <Name>Article 40</Name>
+    <Description>Description of article 40</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/1.jpg</string>
+      <string>Content/Images/Articles/1.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>41</Id>
-    <Description>Article 41</Description>
+    <Name>Article 41</Name>
+    <Description>Description of article 41</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/9.jpg</string>
+      <string>Content/Images/Articles/6.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>42</Id>
-    <Description>Article 42</Description>
+    <Name>Article 42</Name>
+    <Description>Description of article 42</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/9.jpg</string>
+      <string>Content/Images/Articles/6.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>43</Id>
-    <Description>Article 43</Description>
+    <Name>Article 43</Name>
+    <Description>Description of article 43</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/6.jpg</string>
+      <string>Content/Images/Articles/7.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>44</Id>
-    <Description>Article 44</Description>
+    <Name>Article 44</Name>
+    <Description>Description of article 44</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/9.jpg</string>
+      <string>Content/Images/Articles/4.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>45</Id>
-    <Description>Article 45</Description>
+    <Name>Article 45</Name>
+    <Description>Description of article 45</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/4.jpg</string>
+      <string>Content/Images/Articles/8.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>46</Id>
-    <Description>Article 46</Description>
+    <Name>Article 46</Name>
+    <Description>Description of article 46</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/4.jpg</string>
+      <string>Content/Images/Articles/9.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>47</Id>
-    <Description>Article 47</Description>
+    <Name>Article 47</Name>
+    <Description>Description of article 47</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/9.jpg</string>
+      <string>Content/Images/Articles/2.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>48</Id>
-    <Description>Article 48</Description>
+    <Name>Article 48</Name>
+    <Description>Description of article 48</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/9.jpg</string>
+      <string>Content/Images/Articles/2.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>49</Id>
-    <Description>Article 49</Description>
+    <Name>Article 49</Name>
+    <Description>Description of article 49</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/4.jpg</string>
+      <string>Content/Images/Articles/2.jpg</string>
+    </Images>
   </Article>
   <Article>
     <Id>50</Id>
-    <Description>Article 50</Description>
+    <Name>Article 50</Name>
+    <Description>Description of article 50</Description>
     <Price>10</Price>
+    <Images>
+      <string>Content/Images/Articles/2.jpg</string>
+      <string>Content/Images/Articles/2.jpg</string>
+    </Images>
   </Article>
 </ArrayOfArticle>

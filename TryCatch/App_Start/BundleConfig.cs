@@ -23,6 +23,13 @@ namespace TryCatch
             bundles.Add(new ScriptBundle("~/bundles/toastr").Include(
                 "~/Scripts/toastr.min.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/slider").Include(
+                "~/Scripts/jquery.slides.min.js"));
+
+            bundles.Add(new StyleBundle("~/Content/slider").Include(
+                      "~/Content/slider.css",
+                      "~/Content/font-awesome.min.css"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",

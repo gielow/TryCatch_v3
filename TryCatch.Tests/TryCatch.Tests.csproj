@@ -97,6 +97,7 @@
     <Compile Include="Api\CustomerTests.cs" />
     <Compile Include="Api\WebApiClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Respository\UnitTest1.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -106,6 +107,14 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\TryCatch.Data\TryCatch.Data.csproj">
+      <Project>{9dae5f3b-a59f-4775-ab9c-6d42938de78f}</Project>
+      <Name>TryCatch.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TryCatch.Interfaces\TryCatch.Interfaces.csproj">
+      <Project>{3affb2f6-c545-4707-9d10-8cc549f857a1}</Project>
+      <Name>TryCatch.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TryCatch.Models\TryCatch.Models.csproj">
       <Project>{4f88fad6-67d5-4120-a7ab-dbbe6549669f}</Project>
       <Name>TryCatch.Models</Name>

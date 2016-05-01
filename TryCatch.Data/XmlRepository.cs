@@ -16,6 +16,10 @@ namespace TryCatch.Data
             {
                 return XmlDataProvider.Instance.Get<List<Article>>("articles.xml");
             }
+            set
+            {
+                XmlDataProvider.Save(value, "articles.xml");
+            }
         }
     }
 }

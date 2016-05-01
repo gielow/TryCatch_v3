@@ -68,7 +68,7 @@ namespace TryCatch.Core
             {
                 var orderItem = new OrderItem();
                 orderItem.ArticleId = article.Id;
-                orderItem.ArticleName = article.Description;
+                orderItem.ArticleName = article.Name;
                 orderItem.ArticlePrice = article.Price;
                 orderItem.CartGuid = guid;
                 orderItem.Quantity = quantity;

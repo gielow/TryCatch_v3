@@ -184,3 +184,5 @@ D:\VSWorkspace\TryCatch_v3\TryCatch\bin\System.Web.Http.Owin.xml
 D:\VSWorkspace\TryCatch_v3\TryCatch\obj\Debug\TryCatch.csprojResolveAssemblyReference.cache
 D:\VSWorkspace\TryCatch_v3\TryCatch\obj\Debug\TryCatch.dll
 D:\VSWorkspace\TryCatch_v3\TryCatch\obj\Debug\TryCatch.pdb
+E:\VSWorkspace\TryCatch_v3\TryCatch\obj\Debug\TryCatch.Properties.Resources.resources
+E:\VSWorkspace\TryCatch_v3\TryCatch\obj\Debug\TryCatch.csproj.GenerateResource.Cache

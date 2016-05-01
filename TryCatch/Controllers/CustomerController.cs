@@ -26,8 +26,9 @@ namespace TryCatch.Controllers
         }
 
         // GET: Customer/Create
-        public ActionResult Create()
+        public ActionResult Create(string returnUrl)
         {
+            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
@@ -37,6 +38,7 @@ namespace TryCatch.Controllers
         {
             try
             {
+                ViewBag.ReturnUrl = returnUrl;
                 await WebApiClient3.Instance.PostAsync<Customer>("api/Customer", model);
 
                 var loginModel = new CustomerLoginModel()

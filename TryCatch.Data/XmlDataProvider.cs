@@ -38,5 +38,10 @@ namespace TryCatch.Data
 
             return fileData;
         }
+
+        public static void Save<T>(T obj, string fileName) where T : class, new()
+        {
+            Serializer.SerializeObject<T>(obj, Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data/" + fileName));
+        }
     }
 }
