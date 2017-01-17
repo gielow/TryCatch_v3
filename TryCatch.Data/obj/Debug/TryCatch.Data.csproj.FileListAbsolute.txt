@@ -54,3 +54,17 @@ E:\VSWorkspace\TryCatch_v3\TryCatch.Data\bin\Debug\EntityFramework.SqlServer.xml
 E:\VSWorkspace\TryCatch_v3\TryCatch.Data\obj\Debug\TryCatch.Data.csprojResolveAssemblyReference.cache
 E:\VSWorkspace\TryCatch_v3\TryCatch.Data\obj\Debug\TryCatch.Data.dll
 E:\VSWorkspace\TryCatch_v3\TryCatch.Data\obj\Debug\TryCatch.Data.pdb
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch.Data\bin\Debug\TryCatch.Data.dll.config
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch.Data\bin\Debug\TryCatch.Data.dll
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch.Data\bin\Debug\TryCatch.Data.pdb
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch.Data\bin\Debug\EntityFramework.dll
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch.Data\bin\Debug\TryCatch.Interfaces.dll
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch.Data\bin\Debug\TryCatch.Models.dll
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch.Data\bin\Debug\TryCatch.Interfaces.pdb
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch.Data\bin\Debug\TryCatch.Models.pdb
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch.Data\bin\Debug\EntityFramework.xml
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch.Data\obj\Debug\TryCatch.Data.csprojResolveAssemblyReference.cache
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch.Data\obj\Debug\TryCatch.Data.dll
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch.Data\obj\Debug\TryCatch.Data.pdb
