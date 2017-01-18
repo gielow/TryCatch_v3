@@ -281,3 +281,17 @@ C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch\obj\Debug\TryCatch.Properties.
 C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch\obj\Debug\TryCatch.csproj.GenerateResource.Cache
 C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch\obj\Debug\TryCatch.dll
 C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch\obj\Debug\TryCatch.pdb
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch\bin\roslyn\csc.exe.config
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch\bin\roslyn\csc.rsp
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch\bin\roslyn\csi.exe
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch\bin\roslyn\csi.rsp
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch\bin\roslyn\System.AppContext.dll
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch\bin\roslyn\vbc.exe.config
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch\bin\roslyn\vbc.rsp
