@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryCatch.Tests", "TryCatch.Tests\TryCatch.Tests.csproj", "{0CFD0B47-5745-4D73-843C-0807D9704A51}"
 EndProject
@@ -18,6 +18,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryCatch", "TryCatch\TryCatch.csproj", "{3C45F543-7F2C-4562-A39C-BD217FE395BA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryCatch.Api", "TryCatch.Api\TryCatch.Api.csproj", "{A90BE42E-FFF2-4AB0-A012-74A5BE79D612}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1DCAF877-345E-4E32-A539-724DD5E66F13}"
+	ProjectSection(SolutionItems) = preProject
+		Octo.nuspec = Octo.nuspec
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
