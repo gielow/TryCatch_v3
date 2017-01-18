@@ -16,5 +16,6 @@ E:\VSWorkspace\TryCatch_v3\TryCatch.Models\obj\Debug\TryCatch.Models.dll
 E:\VSWorkspace\TryCatch_v3\TryCatch.Models\obj\Debug\TryCatch.Models.pdb
 C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch.Models\bin\Debug\TryCatch.Models.dll
 C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch.Models\bin\Debug\TryCatch.Models.pdb
+C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch.Models\obj\Debug\TryCatch.Models.csprojResolveAssemblyReference.cache
 C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch.Models\obj\Debug\TryCatch.Models.dll
 C:\Users\Gielow\Source\Repos\TryCatch_v3\TryCatch.Models\obj\Debug\TryCatch.Models.pdb
